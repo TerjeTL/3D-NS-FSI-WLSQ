@@ -74,11 +74,11 @@ void OutputManager::processIntermediateOutput(const Mesh& mesh,
 			storeCurrentSolution(mesh, t);
 	}
 	// Write to screen:
-	double timeSinceStatusReport = statusReportTimer.getElapsedTime().asSeconds();
+	double timeSinceStatusReport = 0.0;// statusReportTimer.getElapsedTime().asSeconds();
 	if ( timeSinceStatusReport >= params.statusReportInterval )
 	{
 		writeStatusReport_toScreen(t, timeLevel, dt);
-		statusReportTimer.restart();
+		//statusReportTimer.restart();
 	}
 }
 
@@ -303,7 +303,7 @@ void OutputManager::writeStatusReport_toScreen(double t,	// <- time
 	else
 		cout << endl;
 	cout << "Timestep size: dt = " << dt << endl;
-	cout << "Wall clock time: " << setprecision(3) << wallClockTimer.getElapsedTime().asSeconds() << setprecision(6) << " sec" << endl << endl;
+	cout << "Wall clock time: " << setprecision(3) << 0.0 << setprecision(6) << " sec" << endl << endl;
 }
 
 // Write a file with a list of the actual times when the solution was saved.

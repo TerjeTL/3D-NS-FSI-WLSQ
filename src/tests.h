@@ -62,32 +62,32 @@ void testArrayTraversalOneOrThreeIndex()
 	fillArrayRandomNumbers(A2, 0, 10);
 	fillArrayRandomNumbers(A3, 0, 10);
 
-	Clock timer;
+	//Clock timer;
 	for (size_t i{0}; i<A1.getLength(); ++i)
 		for (size_t j{0}; j<A1.getWidth(); ++j)
 			for (size_t k{0}; k<A1.getHeight(); ++k)
 				A3(i,j,k) = A1(i,j,k) + A2(i,j,k);
-	Time t1 = timer.restart();
+	//Time t1 = timer.restart();
 	for (size_t i{0}; i<A1.getSize(); ++i)
 		A3(i) = A1(i) + A2(i);
-	Time t2 = timer.getElapsedTime();
+	//Time t2 = timer.getElapsedTime();
 
-	cout << "Triple index: " << t1.asSeconds() << " s" << endl;
-	cout << "Single index: " << t2.asSeconds() << " s" << endl;
+	//cout << "Triple index: " << t1.asSeconds() << " s" << endl;
+	//cout << "Single index: " << t2.asSeconds() << " s" << endl;
 }
 
 void testVectorAllocationSpeed()
 {
-	Clock clock;
+	//Clock clock;
 	vector<double> v1(10);
 	v1[9] = 2.3;
-	Time t1 = clock.restart();
+	//Time t1 = clock.restart();
 	vector<double> v2(10000000);
 	v2[9999999] = 7.7;
-	Time t2 = clock.getElapsedTime();
+	//Time t2 = clock.getElapsedTime();
 
-	cout << "t1: " << t1.asMicroseconds() << endl;
-	cout << "t2: " << t2.asMicroseconds() << endl;
+	//cout << "t1: " << t1.asMicroseconds() << endl;
+	//cout << "t2: " << t2.asMicroseconds() << endl;
 }
 
 void testVectorAllocationCapacity()
@@ -152,7 +152,7 @@ void testPerformanceArrayLoop()
 	bool allInOneLoop = false;
 	if (allInOneLoop)
 	{
-		Clock clock;
+		//Clock clock;
 		for (size_t i{0}; i<N; ++i)
 		{
 			u[i] = rho_u[i] / rho[i];
@@ -163,12 +163,12 @@ void testPerformanceArrayLoop()
 			mu[i] = pow( 1 + T[i], 1.5 ) *1.3 / ( 200*( T[i]+1.3 ) );
 			kappa[i] = mu[i] / ( 0.4*0.72 );
 		}
-		Time time = clock.getElapsedTime();
-		cout << "All in one loop. Time: " << time.asSeconds() << " s" << endl;
+		//Time time = clock.getElapsedTime();
+		cout << "All in one loop. Time: " << "whatever" << " s" << endl;
 	}
 	else
 	{
-		Clock clock;
+		//Clock clock;
 		for (size_t i{0}; i<N; ++i)
 			u[i] = rho_u[i] / rho[i];
 		for (size_t i{0}; i<N; ++i)
@@ -184,8 +184,8 @@ void testPerformanceArrayLoop()
 		for (size_t i{0}; i<N; ++i)
 			kappa[i] = mu[i] / ( 0.4*0.72 );
 
-		Time time = clock.getElapsedTime();
-		cout << "Multiple loops. Time: " << time.asSeconds() << " s" << endl;
+		//Time time = clock.getElapsedTime();
+		cout << "Multiple loops. Time: " << "something" << " s" << endl;
 	}
 }
 

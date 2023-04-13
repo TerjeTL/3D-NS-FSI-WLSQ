@@ -860,7 +860,7 @@ ConservedVariablesScalars ImmersedBoundary::interpolateImagePointVariables(
 		const vector<Vector3_d>& unitNormals,
 		const MeshDescriptor& mesh )
 {
-	ConservedVariablesScalars imagePointBCVars;
+	ConservedVariablesScalars imagePointBCVars; // TODO: so in here i need changes
 	if (allSurroundingAreFluid)
 	{ // Then we can use the simplified interpolation method:
 		Vector3_u lowerIndexNode(surroundingNodes.iMin, surroundingNodes.jMin, surroundingNodes.kMin);
@@ -1082,7 +1082,7 @@ void SphereBody::getSolidAndFilterNodesInSphere(const ConfigSettings& params,
 												Array3D_nodeType& nodeTypeArray   // <- Output
 		   	   	   	   	   	   	   	   	   	    )
 {
-	double filterLayerWidth = nNodesFilterLayer * max({gridSpacing.x, gridSpacing.y, gridSpacing.z});
+	double filterLayerWidth = nNodesFilterLayer * max(max(gridSpacing.x, gridSpacing.y), gridSpacing.z);
 	for (size_t i { indicesToCheck.iMin }; i <= indicesToCheck.iMax; ++i)
 		for (size_t j { indicesToCheck.jMin }; j <= indicesToCheck.jMax; ++j)
 			for (size_t k { indicesToCheck.kMin }; k <= indicesToCheck.kMax; ++k)

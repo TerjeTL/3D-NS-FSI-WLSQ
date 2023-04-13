@@ -13,7 +13,7 @@
 #include "ConfigSettings.h"
 #include "FlowVariableGroupStructs.h"
 #include "Node.h"
-#include <eigen3/Eigen/LU>
+#include <Eigen/LU>
 #include <map>
 
 // The three spatial coordinate axes

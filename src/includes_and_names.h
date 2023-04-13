@@ -11,6 +11,8 @@
 #ifndef SRC_INCLUDES_AND_NAMES_H_
 #define SRC_INCLUDES_AND_NAMES_H_
 
+#include <Windows.h>
+
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -21,8 +23,9 @@
 #include <exception>
 #include <math.h>
 #include <algorithm>
-#include <SFML/System.hpp>
+//#include <SFML/System.hpp>
 #include <libconfig.h++>
+#include <Eigen/Eigen>
 
 
 using std::cout;
@@ -41,8 +44,8 @@ using std::max;
 using std::min;
 using std::fmod;
 
-using sf::Clock; // Probably use std:chrono instead
-using sf::Time;
+//using sf::Clock; // Probably use std:chrono instead
+//using sf::Time;
 
 using libconfig::Config;
 using libconfig::Setting;
@@ -50,6 +53,9 @@ using libconfig::Setting;
 
 typedef std::array<size_t, 8> Array8_u;
 typedef std::array<bool,   8> Array8_b;
+
+typedef unsigned int uint;
+typedef unsigned long long ulong;
 
 
 #endif /* SRC_INCLUDES_AND_NAMES_H_ */
